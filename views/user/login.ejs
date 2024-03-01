@@ -1,0 +1,21 @@
+<%layout("/layout/boilerplate")%>
+<body>
+     <form action="/user/login" method="post" data-aos="fade-right">
+        <div class="sign-container">
+            <div class="heading">
+                 <p>Login-In</p>
+            </div>
+             <div>
+                <label for="name">Username</label>
+                <input type="text" id="name" name="username" placeholder="Username" required/>
+             </div>
+             <div>
+                <label for="pass">Password</label>
+                <input type="password" id="pass" name="password" placeholder="Password" required/>
+             </div>
+             <div>
+                <button class="btn">login</button>
+             </div>
+        </div>
+     </form>
+</body>

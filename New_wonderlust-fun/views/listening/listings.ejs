@@ -1,0 +1,70 @@
+<%layout("/layout/boilerplate")%>
+<body>
+    <!-- <h2 class="listings-heading">All Listings</h2> -->
+    <div id="filters">
+      <div class="filter">
+         <i class="fa-solid fa-fire"></i>
+         <p>Tranding</p>
+      </div>
+      <div class="filter">
+         <i class="fa-solid fa-bed"></i>
+         <p>Rooms</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-mountain-city"></i>
+        <p>Iconic Cities</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-mountain-sun"></i>
+        <p>Mountaines</p>
+      </div>
+      <div class="filter">
+        <i class="fa-regular fa-chess-rook"></i>
+        <p>Casties</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-person-swimming"></i>
+        <p>Amazing Pools</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-campground"></i>
+        <p>Camping</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-cow"></i>
+        <p>Farms</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-snowflake"></i>
+        <p>Arctic</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-igloo"></i>
+        <p>Domes</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-sailboat"></i>
+        <p>boats</p>
+      </div>
+      <div class="tax-toggle">
+        <p>Display after all taxes</p>
+        <!-- <button id="toggle">click</button> -->
+        <div class="toggle">
+          <input type="checkbox" id="check"/>
+          <label for="check"></label>
+        </div>
+      </div>
+    </div>
+    <div class="card-container">
+      <%for (list of allData){%>
+      <a href="/listings/<%=list._id%>" style="text-decoration: none; color: black;">
+      <div class="card">
+         <img src="<%=list.image.url%>" alt="img">
+         <h3 class="listings-title"><%=list.title%></h3>
+         <p class="listing-des"><%=list.description%></p>
+         <p class="listing-price"><span class="listing-price-sp">&#x20B9;<%=list.price.toLocaleString("en-IN")%> </span><span>night</span><i class="gst">&nbsp; +18$ GST</i></p>
+      </div>
+      </a>
+      <%}%>
+    </div>
+</body>

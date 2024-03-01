@@ -1,0 +1,42 @@
+<%layout("/layout/boilerplate")%>
+<body>
+   <!-- <h2 class="listings-heading">Edit listings</h2> -->
+   <div class="form-container">
+   <h2 class="listings-heading">Edit listings</h2>
+   <form action="/listings/<%=listing._id%>?_method=PUT" method="post" enctype="multipart/form-data">
+
+    <label for="title">Title</label>
+    <br>
+    <input type="text" id="title" name="listing[title]" value="<%=listing.title%>"/>
+    
+    <label for="des">Description</label>
+    <br>
+    <textarea name="listing[description]"  id="des" cols="30" rows="10"><%=listing.description%></textarea>
+    
+    <label for="price">Price</label>
+    <br>
+    <input type="text" id="price" name="listing[price]" value="<%=listing.price%>"/>
+    
+   <div style="margin: 0.5rem 0 0.5rem 2rem; font-weight: 500;">
+      Original image <br>
+      <img src="<%=originalUrl%>" alt="image" style="width: 200px; border-radius: 5px; margin:0.3rem 0 0.3rem 0.6rem;">
+   </div>
+
+    <label for="img">Image</label>
+    <br>
+    <input type="file" id="img" name="listing[image]"value="Upload Your Image Here"/>
+
+
+    <label for="loc">Location</label>
+    <br>
+    <input type="text" name="listing[location]" value="<%=listing.location%>"/>
+    
+    <label for="country">Country</label>
+    <br>
+    <input type="text" id="country" name="listing[country]" value="<%=listing.country%>"/>
+
+
+    <button>Edit</button>
+   </form>
+   </div>
+</body>

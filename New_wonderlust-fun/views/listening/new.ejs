@@ -1,0 +1,38 @@
+<%layout("/layout/boilerplate")%>
+<body>
+   <!-- <h2 class="listings-heading">Create a new listings</h2> -->
+   <div class="form-container">
+   <h2 class="listings-heading">Create a new listings</h2>
+   <form action="/listings" method="post" enctype="multipart/form-data">
+    <label for="title">Titel </label>
+    <br>
+    <input type="text"  id="title" name="listing[title]" placeholder="Enter Title" />
+ 
+    <label for="des">Description</label>
+    <br>
+    <textarea name="listing[description]" id="des" cols="30" rows="10"placeholder="Descriptions" ></textarea>
+
+    <label for="price">Price</label>
+    <br>
+    <input type="text" id="price" name="listing[price]" placeholder="Enter price"  />
+
+    <!-- <label for="img">Image</label>
+    <br>
+    <input type="text" id="img" name="listing[image]" placeholder="Enter img /URL" /> -->
+
+    <label for="img">Image</label>
+    <br>
+    <input type="file" id="img" name="listing[image]" placeholder="Upload Your image" required />
+    
+    <label for="loc">Location</label>
+    <br>
+    <input type="text" id="loc" name="listing[location]" placeholder="Enter location" />
+    
+    <label for="country">Country</label>
+    <br>
+    <input type="text" id="country" name="listing[country]" placeholder="Enter country" />
+    
+    <button>Add New Listings</button>
+   </form>
+   </div>
+</body>

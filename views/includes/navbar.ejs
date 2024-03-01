@@ -1,0 +1,82 @@
+<nav>
+   <div class="blank"></div>
+   <div class="side-nav">
+       <div class="logo">
+           <%if(!currentUser){%>
+             <div class="user-logo"><i class="fa-solid fa-user"></i></div>
+             <h3>Anynomus</h3>
+           <%}%>
+          <%if(currentUser){%>
+            <p><%=currentUser.username[0]%></p>
+            <h3>Welcome,<%=currentUser.username%></h3>
+          <%}%>
+         <i class="fa-solid fa-circle-xmark x-mark"></i>
+       </div>
+       <div class="links">
+         <div class="account common-link">
+            <p class="Name">Account</p>
+            <%if(currentUser){%>
+               <a href="/user/account"><div><i class="fa-solid fa-right-to-bracket"></i></div><span>Account</span></a>
+               <a href="/user/logout"><div><i class="fa-solid fa-right-to-bracket"></i></div><span>Log-out</span></a>
+            <%}%>
+            <%if(!currentUser){%>
+               <a href="/user/sign-in"><div><i class="fa-solid fa-right-to-bracket"></i></div><span>Sing-up</span></a>
+               <a href="/user/login"> <div><i class="fa-solid fa-arrow-right-to-bracket"></i></div><span>Log-in</span></a>
+            <%}%>
+         </div>
+         <div class="listing common-link">
+            <p class="Name">Listings</p>
+            <a href="/listings/new"><div><i class="fa-brands fa-airbnb" style="font-weight: 600;"></i></div><span>Airbnb Your Home</span></a>
+            <a href="/listings"><div><i class="fa-solid fa-reply-all"></i></div><span>All Listings</span></a>
+         </div>
+         <div class="about-us common-link">
+            <div class="Name">General's</div>
+            <a href="/user/help"><div><i class="fa-solid fa-circle-info"></i></div><span>Help Center</span></a>
+            <a href="/user/contact-us"><div><i class="fa-solid fa-message"></i></div><span>Contact-us</span></a>
+            <a href="/user/about"><div><i class="fa-solid fa-face-smile"></i></div><span>About-us</span></a>
+         </div>
+         <div class="my-sign">Design By <b>Shao</b></div>
+       </div>
+   </div>
+   <div class="options">
+     <div class="air">
+        <a href="/listings" style="padding: 0.5rem 0.2rem;"><i class="fa-brands fa-airbnb airbnb"></i></a>
+        <h4>airbnb</h4>
+     </div>
+     <div class="listings-options">
+      <a href="/listings">All Listings</a>
+     </div>
+     <!-- <a href="/listings/new">Airbnb Your Home</a> -->
+   </div>
+   <div class="search-engin">
+      <input type="text" id="search" placeholder="search"/>
+      <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+   </div>
+   <div class="login">
+      <a class="airbnb-add" href="/listings/new">Airbnb Your Home</a>
+      <i class="fa-solid fa-bars hangburger"></i>
+       <div class="logo">
+         <i class="fa-solid fa-bars"></i>
+          <%if(currentUser){%>
+            <div class="user-name"><%=currentUser.username[0]%></div>
+          <%}%>
+          <%if(!currentUser){%>
+          <!-- <img src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg" alt="img"> -->
+          <i class="fa-solid fa-user user"></i>
+          <%}%>
+          <div class="login-hide">
+            <%if(currentUser){%>
+               <a href="/user/account">Account</a>
+               <a href="/user/logout">Log-out</a>
+            <%}%>
+            <%if(!currentUser){%>
+               <a href="/user/sign-in">Sing-up</a>
+               <a href="/user/login">Log-in</a>
+            <%}%>
+            <hr>
+            <a href="/listings/new">Airbnb Your Home</a>
+            <a href="#">help center</a>
+          </div>
+       </div>
+   </div>
+</nav>

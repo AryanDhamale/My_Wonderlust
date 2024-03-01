@@ -1,0 +1,71 @@
+<%layout('/layout/boilerplate')%>
+  <script>
+    const mapToken="<%=process.env.MAP_TOKEN%>";
+    const listings=<%-JSON.stringify(listing)%>;
+  </script>
+   <div class="show-container">
+     <h2 class="show-heading"><%=listing.title%></h2>
+     <img src="<%=listing.image.url%>" alt="img">
+     <h3 class="show-heading">Post By:<%=owner.username%></h3>
+     <h2 class="show-heading"><%=listing.title%></h2>
+     <p><%=listing.description%></p>
+     <p><span class="show-price">&#x20B9;<%=listing.price.toLocaleString("en-IN")%> </span><span>night</span></p>
+     <p><%=listing.location%></p>
+     <p><%=listing.country%></p>
+     <%if(currentUser && listing.owner._id.equals(currentUser._id)){%>
+     <div class="show-container-btns">
+        <a href="/listings/<%=listing._id%>/edit"><i class="fa-solid fa-pencil"></i> Edit</a>
+     <form action="/listings/<%=listing._id%>?_method=delete" method="post">
+        <button>Delete</button>
+    </form>
+     </div>
+     <%}%>
+     <%if(currentUser){%>
+     <hr style="margin:0.6rem 0;color: rgba(0, 0, 0, 0.122);">
+     <div class="review">
+        <form action="/listings/<%=listing._id%>/review" method="POST">
+         <h2 style="margin: 0.6rem 0 ;">Leave a Review</h2>
+          <!-- <div class="range">
+              <label for="range">Rating</label>
+              <input type="range" min="0" max="5" value="0" id="range" name="review[rating]"/>
+          </div> -->
+          <fieldset class="starability-checkmark" style="z-index: 0;">
+            <legend>Rating</legend>
+            <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+            <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+            <label for="first-rate1" title="Terrible">1 star</label>
+            <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+            <label for="first-rate2" title="Not good">2 stars</label>
+            <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+            <label for="first-rate3" title="Average">3 stars</label>
+            <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+            <label for="first-rate4" title="Very good">4 stars</label>
+            <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+            <label for="first-rate5" title="Amazing">5 stars</label>
+          </fieldset>
+          <div class="comment">
+               <label for="comment">Comments</label>
+               <textarea name="review[comment]"  id="comment" cols="30" rows="10"></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+         <%if(listing.review.length){%>
+         <h4 style="margin-top: 1rem;">Customer Reviews</h4>
+         <div class="review-container">
+         <%for(let rs of listing.review){%>
+               <div class="child">
+                  <p><%=rs.comment%></p>
+                  <p><b>Rating : </b><%=rs.rating%> <i class="fa-solid fa-star"></i></p>
+                      <form action="/listings/<%=listing._id%>/review/<%=rs._id%>?_method=delete" method="post">
+                        <button>Delete</button>
+                      </form>
+               </div>
+         <%}%>
+      </div>
+      <%}%>
+     </div>
+     <%}%>
+     <h2>Where you will be</h2>
+     <div id="map"></div>
+   </div>
+   <script src="/map.js"></script>

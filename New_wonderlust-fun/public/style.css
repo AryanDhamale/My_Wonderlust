@@ -1,0 +1,885 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box !important;
+    /* font-family: "Roboto", Arial,sans-serif; */
+    font-family: "Montserrat", sans-serif; 
+}
+/* nav Stylings */
+body{
+    /* background-color: white; */
+    background-color: rgb(245, 249, 252,1);
+}
+.gst
+{
+    display:none;
+}
+nav
+{
+    z-index:1;
+}
+nav .login .logo
+{
+    position: relative;
+}
+nav .login 
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+nav .login .logo img
+{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100px;
+}
+nav .login .logo .user-name
+{
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;   
+    background-color: darkblue;
+    color: white;
+}
+nav .login .logo .login-hide
+{
+    width: 13rem;
+    position: absolute;
+    padding: 0.5rem 1rem;
+    top: 3rem;
+    right: 0.8rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: white;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.527);
+    visibility: hidden;
+}
+nav .login .logo .login-hide a
+{
+    font-size: 0.9rem;
+    text-decoration: none;
+    padding: 0.6rem 0.5rem;
+    width: 90%;
+    color: rgba(0, 0, 0, 0.549);
+    border-radius: 5px;
+}
+nav .login .logo .login-hide a:nth-of-type(1)
+{
+    color: black;
+}
+nav .login .logo .login-hide a:hover
+{
+    background-color: whitesmoke;
+}
+nav .login .logo .login-hide hr
+{
+    width: 100%;
+    margin: 0.6rem 0;
+}
+nav
+{
+    width: 100%;
+    height: 5rem;
+    background-color: #fff;
+    border-bottom: 1px solid rgb(225, 225, 225);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    font-size: 0.95rem;
+}
+nav .options .listings-options a,nav .login .airbnb-add
+{
+   text-decoration: none;    
+   font-weight: 500;  
+   cursor: pointer;
+   color: rgba(0, 0, 0, 0.589);
+   padding: 0.5rem 0.8rem;
+}
+nav .options .home
+{
+   font-weight: 600;
+   color: black;
+}
+nav .options .listings-options a:hover,nav .login .airbnb-add:hover
+{
+    background-color: whitesmoke;
+    border-radius: 50px;
+    color: rgba(0, 0, 0, 0.797);
+}
+.login .logo
+{
+    /* background-color: rgb(226, 226, 226); */
+    border: 1px solid #00008bb8;
+    width: 4.5rem;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.3rem 0.2rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    /* box-shadow: 0 0 0 white; */
+    transition: box-shadow 0.2s linear 0s;
+}
+.login .logo i 
+{
+    color: #00008bb8;
+}
+.login .logo .user
+{
+    background-color: #00008bb8;
+    color: white;
+    padding: 0.3rem 0.4rem;
+    font-size: 0.8rem;
+    border-radius: 10px;
+}
+.login .logo:hover{
+     box-shadow: 0 8px 10px rgb(226, 226, 226);
+}
+nav .airbnb
+{
+    /* color: red; */
+    color: #00008bad;
+    font-size: 2rem;
+}
+nav .air{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem 1rem;
+}
+nav .air h4
+{
+    padding-left: 0.3rem;
+    /* color: red; */
+    color: #00008bc2;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+nav .options
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+nav .login .hangburger
+{
+    padding: 0.4rem 0.5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    border: 2px solid #00008bb8;
+    color: #00008bb8;
+    margin-right: 2rem;
+    cursor: pointer;
+    display: none;
+}
+.blank
+{
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.314);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+.side-nav
+{
+    background-color: white;
+    height: 100vh;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: -100%;
+    transition: all 0.4s;
+}
+.x-mark
+{
+    position: absolute;
+    right: 40px;
+    font-size: 1.3rem;
+    color: #00008bb8;
+}
+.side-nav .logo
+{
+     width: 100%;
+     height: 72px;
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     margin-left: 1rem;
+     position: relative;
+}
+.side-nav .logo .user-logo
+{
+    background-color: #00008bb8;
+    color: white;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.1rem;
+    border-radius: 10px
+}
+.side-nav .logo p 
+{
+    background-color: #00008bb8;
+    color: white;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.side-nav .logo h3
+{
+    font-weight: 500;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+.side-nav .links .common-link
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    margin: 0.3rem auto;
+}
+.side-nav .links .common-link .Name 
+{
+    align-self: flex-start;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.5rem 0.6rem
+}
+
+.side-nav .links a 
+{
+    width: 90%;
+    padding: 0.5rem 0.5rem;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    margin: 0.3rem 0;
+}
+.side-nav .links a:hover
+{
+    background-color: #2761e73d;
+    color: #1251e2;
+}
+.side-nav .links a i 
+{
+    color: #00008bb3;
+}
+.side-nav .links a span
+{
+    padding-left: 0.4rem;
+}
+.side-nav .links a div
+{
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.side-nav .links .my-sign
+{
+    position: absolute;
+    bottom: 50px;
+    margin: auto;
+    width: 80%;
+    left: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-align: center
+}
+.side-nav-motion
+{
+    left: 0;
+}
+#filters
+  {
+    width: 90%;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    position: relative;
+  }
+  #filters .tax-toggle
+  {
+    border: 1px solid rgb(212, 212, 212);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.8rem 0.7rem;
+    border-radius: 10px;
+  }
+
+#filters .tax-toggle p 
+  {
+    font-size:0.9rem;
+    padding-right: 0.5rem;
+    font-weight: 500;
+  }
+  .filter
+  {
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+    margin: 0.9rem 0.7rem;
+    border-bottom: 1px solid white;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: border-bottom 1s linear 0;
+    font-weight: 0.9rem;
+  }
+  .filter i 
+  {
+    font-size: 0.95rem;
+  }
+  .filter:hover
+  {
+    opacity: 1;
+    border-bottom: 1px solid black;
+  }
+  .filter p {
+    font-size: 0.8rem;
+  }
+  #filters .tax-toggle .toggle
+  {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+  #filters .tax-toggle .toggle label
+  {
+    display: block;
+    width: 40px ;
+    height: 20px ;
+    background-color: rgb(232, 232, 232);
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+  }
+  #filters .tax-toggle .toggle label::before
+  {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 100px;
+    content: '';
+    margin: 1px;
+    transition: all 0.4s;
+  }
+  #filters .tax-toggle .toggle input:checked+label
+  {
+    background-color: #20096d;
+  }
+  #filters .tax-toggle .toggle input:checked+label::before
+  {
+    transform:translateX(20px);
+  }
+  #filters .tax-toggle .toggle input
+  {
+    display: none;
+  }
+  .search-engin
+  {
+    width: 19rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .search-engin input
+  {
+    padding: 0.7rem 0.7rem;
+    width: 100%;
+    border-radius: 50px;
+    /* border: 1px solid rgb(223, 223, 223); */
+    border: 1px solid rgb(92, 96, 245);
+    outline: none;
+    font-weight: 500;
+    font-size: 0.8rem;
+  }
+  .search-engin label i {
+    /* background-color: #ff385c; */
+    background-color: #00008bb8;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 50px;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.3rem;
+    cursor: pointer;
+  }
+
+/* Footer Stylings  */
+.footer
+{
+    background-color: #fff;
+    width: 100%;
+    height: 5rem;
+    border-top: 1px solid rgb(225, 225, 225);
+}
+.footer .footer-container 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-left: 3rem;
+}
+.footer .footer-container .options a
+{
+   text-decoration: none;
+   color: rgba(0, 0, 0, 0.515);
+   padding: 0 0.5rem;
+}
+.footer-container .social
+{
+    width: 8rem;
+    display: flex;
+    padding: 0.6rem 0.3em;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 3rem;
+}
+.footer-container .social h3
+{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.footer-container .social i
+{
+    font-size: 1rem;
+    color: white;
+    background-color: black;
+    padding: 0.2rem;
+    border-radius: 3px;
+}
+/* card Stylings */
+/* . 
+{
+    padding: 0.5rem 1rem;
+} */
+.card-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1;
+}
+.card-container .card
+{
+    /* width: 20rem; */
+    width: 60vh;
+    margin: 0.5rem;
+    /* height: 25rem; */
+    height: 60vh;
+    border-radius: 10px;
+    /* border: 2px solid rgb(220, 220, 220); */
+    cursor: pointer;
+}
+.card-container .card .listings-title
+{
+   font-weight: 600;
+   font-size: 1rem;
+   padding: 0.5rem 0.4rem;
+}
+
+.card-container .card p{
+    padding: 0.1rem 0.4rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.533);
+}
+.card-container .card .listing-price-sp
+{
+    color: black;
+    font-weight: 600;
+}
+.card-container .card img 
+{
+    width: 100%;
+    /* height: 15rem; */
+    height: 40vh;
+    border-radius: 10px;
+    contain: content;
+}
+/* form container */
+.listings-heading
+{
+    margin: 0.5rem 0 1rem 0;
+    font-weight: 500;
+}
+
+.form-container
+{
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 0.8rem;
+}
+.form-container label
+{
+    padding-left: 2rem;
+    font-weight: 500;
+}
+.form-container input,textarea{
+     width: 90%;
+     padding: 0.5rem 1rem;
+     border:  2px solid rgb(232, 235, 240);
+     border-radius: 5px; 
+     color: rgb(0, 0, 0);
+     outline: none;
+     display: block;
+     margin: 0.3rem auto;
+     font-weight: 500;
+     transition: box-shadow 0.2s linear 0s ;
+}
+.form-container input:hover,.form-container textarea:hover{
+   border: 2px solid skyblue;
+   box-shadow: 0 1px 5px skyblue;
+}
+.form-container button,.show-container .show-container-btns a,.show-container .show-container-btns button
+{
+    padding: 0.5rem 0.9rem;
+    margin: 0.3rem 0.5rem;
+    font-size: 0.9rem;
+    background-color: white;
+    border:  2px solid rgb(232, 235, 240);
+    border-radius: 5px;
+    color: #1D3557;
+    cursor: pointer;
+    font-weight: 500;
+}
+.form-container button
+{
+    margin-left: 2rem;
+}
+
+/* show listings */
+.show-container 
+{
+    width: 70%;
+    margin: 2px auto;
+}
+.show-container img
+{
+    width: 100%;
+    border-radius: 0.8rem;
+    height: 80vh;
+    contain: content;
+}
+.show-container .show-heading
+{
+    padding: 0.3rem 0.5rem;
+}
+.show-container p
+{
+    padding: 0.2rem 0.5rem;
+    color: rgba(0, 0, 0, 0.653);
+}
+.show-container .show-price 
+{
+    color: black;
+    font-weight: 600;
+}
+.show-container .show-container-btns
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.9rem 0.5rem;
+}
+.show-container .show-container-btns a
+{
+    text-decoration: none;
+}
+.show-container .show-container-btns button
+{
+   font-size: 1rem;
+   font-weight: 400;
+   color: white;
+   background-color: rgb(92, 96, 245);
+   border: none !important;
+}
+.show-container .review h2
+{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.show-container .review div
+{
+    margin: 0.5rem 0;
+}
+.show-container .review .comment textarea
+{
+   height: 5rem;
+   font-weight: 500;
+   font-size: 1rem;
+   margin: 0.5rem 0;
+   border:  2px solid rgb(232, 235, 240);
+}
+.show-container .review .comment textarea:hover
+{
+    border: 2px solid skyblue;
+   box-shadow: 0 1px 5px skyblue;
+}
+.show-container .review button
+{
+    padding: 0.5rem 1rem;
+    margin: 0.3rem 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(92, 96, 245);
+}
+.show-container .review .review-container
+{
+    display: flex;
+    width: 100%;
+}
+.show-container .review .review-container .child
+{
+    background-color: whitesmoke;
+    flex: 1;
+    border-radius: 5px;
+    margin: 0.5rem 0.4rem;
+    color: black;
+    font-weight: 500;
+    position: relative;
+}
+/* responsivenesss in website */
+/* all listings */
+@media (max-width:658px)
+{
+    .card-container .card
+    {
+        width: 90%;
+        height: 90%;
+        margin: 0.7rem auto;
+    }
+    .card-container .card img 
+    {
+        width: 100%;
+        height: 40vh;
+    }
+    .footer .footer-container
+    {
+        flex-direction: column;
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
+/* for all filter in the top */
+@media (max-width:1400px) {
+    #filters .filter
+    {
+        display: none;
+    }
+}
+
+/* for navigation on the all screen */
+@media (max-width:830px)
+{
+    nav .options .listings-options
+    {
+        display: none;
+    }
+    nav .login .airbnb-add{
+        display: none;
+    }
+    nav .login .logo
+    {
+        display: none;
+    }
+    nav .login .hangburger
+    {
+        display: block;
+    }
+}
+/* for search engin */
+@media (max-width:525px)
+{
+    .search-engin
+    {
+        display: none;
+    }
+}
+
+/* sign - container */
+@media (min-width:500px) and (max-width:1000px)
+{
+    .sign-container
+    {
+        width: 70% !important;
+    }
+}
+@media (max-width:499px)
+{
+    .sign-container
+    {
+        width: 90% !important;
+    }
+    .sign-container div input
+    {
+        width: 90% !important;
+    }
+}
+/*  */
+@media (max-width:1000px)
+{
+    .show-container
+    {
+        width: 90%;
+    }
+    .show-container img 
+    {
+        width: 100%;
+        height: unset;
+    }
+    .show-container .show-heading
+    {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    .green-alert-div,.red-alert-div
+    {
+        width: 90% !important;
+    }
+}
+/* listings alters */
+.green-alert-div
+{
+    width: 50%;
+    height: 50px;
+    margin: 1rem auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2761e73d;
+}
+.green-alert-para
+{
+    flex: 1;
+    font-weight: 500;
+    color: #1251e2;
+    padding-left: 0.8rem;
+}
+.red-alert-div
+{
+    width: 50%;
+    height: 50px;
+    margin: 1rem auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e727273d;
+}
+.red-alert-para
+{
+    flex: 1;
+    font-weight: 500;
+    color: #7f0000;
+    padding-left: 0.8rem;
+}
+.cross
+{
+   margin-right: 1rem;
+   cursor: pointer;
+}
+
+
+/* sing-application  */
+
+.sign-container
+{
+    width: 40%;
+    border: 1px solid white;
+    box-shadow: 0 3px 6px #00000021;
+    border-radius: 10px;
+    margin: 2rem auto;
+    height: 69vh;
+    background-color: white;
+}
+.sign-container div
+{
+     width: 90%;
+     height: 4.5rem;
+     margin: 1rem auto ;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     align-items: flex-start;
+     padding-left: 1rem;
+}
+.sign-container div input
+{
+    width: 80%;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    border: 2px solid rgb(232, 235, 240);
+    outline: none;
+    font-weight:500;
+    font-size: 0.9rem;
+}
+.sign-container .heading p 
+{
+    font-weight: 600;   
+    font-size: 1.4rem;
+}
+.sign-container div label
+{
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+.sign-container .btn
+{
+    padding: 0.5rem 1.1rem;
+    margin: 0.3rem 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(92, 96, 245);
+}
+
+#map
+{
+    width: 100%;
+    height:50vh;
+    margin: 1rem 0;
+    border-radius: 10px;
+}
