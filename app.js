@@ -30,7 +30,7 @@ app.use(express.urlencoded({extended:true}));
 
 async function main()
 {
-    await mongoose.connect(localUrl);
+    await mongoose.connect(dataBaseUrl);
 }
 main().then((res)=>{
     console.log("connected");
@@ -38,20 +38,20 @@ main().then((res)=>{
     console.log(err);
 });
 
-// const store=MongoStore.create({
-//     mongoUrl: dataBaseUrl,
-//     crypto: {
-//         secret: process.env.SALT,
-//     },
-//     touchAfter:24*3600,
-//   });
+const store=MongoStore.create({
+    mongoUrl: dataBaseUrl,
+    crypto: {
+        secret: process.env.SALT,
+    },
+    touchAfter:24*3600,
+  });
 
 app.listen(port,()=>{
     console.log(`listening at port no.${port}`);
 });
 
 const sessionOptions = {
-    //store,
+    store,
     secret:process.env.SALT,
     resave:false,
     saveUninitialized:true,
