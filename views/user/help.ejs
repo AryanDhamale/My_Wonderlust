@@ -1,0 +1,32 @@
+<%layout('/layout/boilerplate')%>
+<body>
+    <div class="help-div">
+        <h2 class="heading"><%if(currentUser){%>
+            <span>Hello <%=currentUser.username%> ,</span>
+            <%}%>
+            How can we help you?</h2>
+        <p class="info">If you have a complaint or concern about Airbnb’s platform or violations of Airbnb’s Terms of Service, you may contact the India grievance officer:<br>Airbnb Ireland UC<br>attn: Andrea Finnegan, Grievance Officer</p>
+        <div class="options">
+             <div class="card" data-aos="fade-right">
+                <i class="fa-solid fa-location-dot"></i>
+                 <p class="upper-para">OUR MAIN OFFICE</p>
+                 <p class="lower-para">Airbnb Ireland UC 8 Hanover Quay dulin 2,Ireland</p>
+             </div>
+             <div class="card" data-aos="fade-left">
+                <i class="fa-solid fa-phone"></i>
+                 <p class="upper-para">PHONE NUMBER</p>
+                 <p class="lower-para">234-9876-5400 <br> 888-0123-4567(Toll free)</p>
+             </div>
+             <div class="card" data-aos="fade-right">
+                <i class="fa-brands fa-whatsapp"></i>
+                 <p class="upper-para">Whatsapp</p>
+                 <p class="lower-para">+91 9422334735</p>
+             </div>
+             <div class="card" data-aos="fade-left">
+                 <i class="fa-solid fa-envelope"></i>
+                 <p class="upper-para">EMAIL</p>
+                 <p class="lower-para" style="text-decoration: underline;">aryandhamale07@gmail.com</p>
+             </div>
+        </div>
+    </div>
+</body>

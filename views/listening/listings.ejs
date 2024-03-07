@@ -58,7 +58,7 @@
     <div class="card-container">
       <%for (list of allData){%>
       <a href="/listings/<%=list._id%>" style="text-decoration: none; color: black;">
-      <div class="card">
+      <div class="card" data-aos="fade-up">
          <img src="<%=list.image.url%>" alt="img">
          <h3 class="listings-title"><%=list.title%></h3>
          <p class="listing-des"><%=list.description%></p>

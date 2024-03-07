@@ -67,8 +67,24 @@ router.get('/logout',(req,res,next)=>{
     })
 })
 
-
+// user account // 
 router.get('/account',(req,res)=>{
    res.render('user/account.ejs');
 });
+
+
+// user contact us //
+router.get('/contact-us',(req,res)=>{
+   res.render('user/contact_us.ejs');
+})
+
+/// user help center //
+router.get('/help',(req,res)=>{
+   res.render('user/help.ejs');
+})
+
+// user contact us //
+router.route('/about',(req,res)=>{
+   res.send('about us');
+})
 module.exports=router;

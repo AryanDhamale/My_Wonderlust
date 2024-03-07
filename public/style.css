@@ -9,6 +9,10 @@
 body{
     /* background-color: white; */
     background-color: rgb(245, 249, 252,1);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 .gst
 {
@@ -203,7 +207,7 @@ nav .login .hangburger
     position: absolute;
     z-index: 3;
     top: 0;
-    left: -100%;
+    left: -130%;
     transition: all 0.4s;
 }
 .x-mark
@@ -262,7 +266,7 @@ nav .login .hangburger
 .side-nav .links .common-link .Name 
 {
     align-self: flex-start;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
     padding: 0.5rem 0.6rem
 }
@@ -273,7 +277,7 @@ nav .login .hangburger
     padding: 0.5rem 0.5rem;
     text-decoration: none;
     border-radius: 10px;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: black;
     display: flex;
@@ -444,6 +448,7 @@ nav .login .hangburger
     width: 100%;
     height: 5rem;
     border-top: 1px solid rgb(225, 225, 225);
+    flex: 1;
 }
 .footer .footer-container 
 {
@@ -580,6 +585,9 @@ nav .login .hangburger
 .form-container button
 {
     margin-left: 2rem;
+    color: white;
+    background-color: rgb(92, 96, 245);
+    border: none;
 }
 
 /* show listings */
@@ -749,9 +757,13 @@ nav .login .hangburger
     {
         width: 90% !important;
     }
-    .sign-container div input
+    .help-div 
     {
-        width: 90% !important;
+        width: 100% !important;
+    }
+    .help-div  .options 
+    {
+        width: 100% !important;
     }
 }
 /*  */
@@ -775,13 +787,17 @@ nav .login .hangburger
     {
         width: 90% !important;
     }
+    .contact-div 
+    {
+        width:90% !important;
+    }
 }
 /* listings alters */
 .green-alert-div
 {
     width: 50%;
     height: 50px;
-    margin: 1rem auto;
+    margin: 0.5rem auto 0 auto;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -799,7 +815,7 @@ nav .login .hangburger
 {
     width: 50%;
     height: 50px;
-    margin: 1rem auto;
+    margin: 0.5rem auto 0 auto;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -824,7 +840,7 @@ nav .login .hangburger
 
 .sign-container
 {
-    width: 40%;
+    width: 35%;
     border: 1px solid white;
     box-shadow: 0 3px 6px #00000021;
     border-radius: 10px;
@@ -841,17 +857,27 @@ nav .login .hangburger
      flex-direction: column;
      justify-content: space-evenly;
      align-items: flex-start;
-     padding-left: 1rem;
+     position: relative;
 }
 .sign-container div input
 {
-    width: 80%;
+    width: 100%;
     padding: 0.6rem 1rem;
+    padding-left: 32px;
+    color: rgb(178 203 245);
     border-radius: 5px;
-    border: 2px solid rgb(232, 235, 240);
+    /* border: 2px solid rgb(232, 235, 240); */
+    border: 2px solid rgb(178 203 245);
     outline: none;
     font-weight:500;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+}
+.sign-container div i 
+{
+    position: absolute;
+    top: 53%;
+    left: 12px;
+    color: rgb(178 203 245);
 }
 .sign-container .heading p 
 {
@@ -882,4 +908,83 @@ nav .login .hangburger
     height:50vh;
     margin: 1rem 0;
     border-radius: 10px;
+}
+
+/* contact container  */
+.contact-div
+{
+    width: 50%;
+    margin:  0 auto;
+    padding: 0.3rem 0.7rem;
+}
+.contact-div h2
+{
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+}
+.contact-div p 
+{
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+/* help div  */
+.help-div
+{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: transparent;
+    padding: 0 0.4rem;
+}
+.help-div .heading
+{
+     margin: 0.5rem 0;
+     font-weight: 500;
+     font-size: 1.7rem;
+}
+.help-div .info
+{
+    padding: 0.6rem 0;
+}
+.help-div  .options 
+{
+    padding: 40px 0;
+    width: 60%;
+    margin: 0.3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.help-div  .options .card
+{
+   width: 270px;
+   height: 150px;
+   padding: 0.4rem 0.5rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   background-color: #fff;
+   border-radius: 8px;
+   box-shadow: 0 1px 10px #001dff69;
+}
+.help-div  .options .card i 
+{
+    color: rgb(71 71 171);
+    font-size: 2rem;
+}
+.help-div .options .upper-para
+{
+     font-weight: 700;
+     font-size: 0.95rem;
+}
+.help-div .options .lower-para
+{
+    font-weight: 600;
+    font-size: 0.8rem;
+    color:rgb(71 71 171) ;
 }

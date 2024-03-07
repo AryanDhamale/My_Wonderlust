@@ -8,7 +8,7 @@
            <%}%>
           <%if(currentUser){%>
             <p><%=currentUser.username[0]%></p>
-            <h3>Welcome,<%=currentUser.username%></h3>
+            <h3 style="width: 65%;">Welcome,<%=currentUser.username%></h3>
           <%}%>
          <i class="fa-solid fa-circle-xmark x-mark"></i>
        </div>
@@ -33,7 +33,7 @@
             <div class="Name">General's</div>
             <a href="/user/help"><div><i class="fa-solid fa-circle-info"></i></div><span>Help Center</span></a>
             <a href="/user/contact-us"><div><i class="fa-solid fa-message"></i></div><span>Contact-us</span></a>
-            <a href="/user/about"><div><i class="fa-solid fa-face-smile"></i></div><span>About-us</span></a>
+            <a href="/user/contact-us"><div><i class="fa-solid fa-face-smile"></i></div><span>About-us</span></a>
          </div>
          <div class="my-sign">Design By <b>Shao</b></div>
        </div>
@@ -61,7 +61,6 @@
             <div class="user-name"><%=currentUser.username[0]%></div>
           <%}%>
           <%if(!currentUser){%>
-          <!-- <img src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg" alt="img"> -->
           <i class="fa-solid fa-user user"></i>
           <%}%>
           <div class="login-hide">
@@ -75,7 +74,7 @@
             <%}%>
             <hr>
             <a href="/listings/new">Airbnb Your Home</a>
-            <a href="#">help center</a>
+            <a href="/user/help">help center</a>
           </div>
        </div>
    </div>
