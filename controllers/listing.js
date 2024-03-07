@@ -80,7 +80,6 @@ module.exports.editListingadd=async(req,res,next)=>{
     }
     req.flash("success","Listing Updated");
     res.redirect(`/listings/${id}`);
-    console.log(Editlisting);
 }
 
 

@@ -17,7 +17,6 @@ router.route('/sign-in')
          let {username,password,email}=req.body;
          const user=new User({username,email});
          let registerUser = await User.register(user,password);
-         console.log(registerUser);
          req.login(registerUser,(err)=>{
              if (err)
              {
