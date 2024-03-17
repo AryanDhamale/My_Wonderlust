@@ -504,8 +504,10 @@ nav .login .hangburger
     /* width: 20rem; */
     width: 60vh;
     margin: 0.5rem;
+    margin: 1rem 0.5rem;
     /* height: 25rem; */
-    height: 60vh;
+    /* height: 60vh; */
+    height: 65vh;
     border-radius: 10px;
     /* border: 2px solid rgb(220, 220, 220); */
     cursor: pointer;
@@ -796,7 +798,7 @@ nav .login .hangburger
 .green-alert-div
 {
     width: 50%;
-    padding: 20px 0;
+    padding: 16px 0;
     margin: 0.5rem auto 0 auto;
     border-radius: 10px;
     display: flex;
@@ -814,7 +816,7 @@ nav .login .hangburger
 .red-alert-div
 {
     width: 50%;
-    padding: 20px 0;
+    padding: 16px 0;
     margin: 0.5rem auto 0 auto;
     border-radius: 10px;
     display: flex;
