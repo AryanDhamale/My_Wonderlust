@@ -796,7 +796,7 @@ nav .login .hangburger
 .green-alert-div
 {
     width: 50%;
-    height: 50px;
+    padding: 20px 0;
     margin: 0.5rem auto 0 auto;
     border-radius: 10px;
     display: flex;
@@ -814,7 +814,7 @@ nav .login .hangburger
 .red-alert-div
 {
     width: 50%;
-    height: 50px;
+    padding: 20px 0;
     margin: 0.5rem auto 0 auto;
     border-radius: 10px;
     display: flex;
